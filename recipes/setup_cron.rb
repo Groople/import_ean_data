@@ -8,7 +8,7 @@
 #
 #
 node[:deploy].each do |app_name, deploy|
-  continue if deploy[:application_type] != "rails"
+  next if deploy[:application_type] != "rails"
 
   cron "import_ean_data" do
     minute "0"
